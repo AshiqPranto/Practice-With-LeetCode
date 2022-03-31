@@ -6,9 +6,9 @@ public:
     int dp(int j,int m)
     {
         if(a[j][m]!=-1) return a[j][m];
-        if(m==1) return a[j][m] = cum[j]-cum[0];
+        if(m==1) return a[j][m] = cum[j];
         int ans = INT_MAX;
-        for(int k = j-1;k>=1 && (k-1+1)>=(m-1) && m>=1;k--)
+        for(int k = j-1;k>=1 && (k)>=(m-1) && m>=1;k--)
         {
             ans = min(ans,max(dp(k,m-1),(cum[j]-cum[k])));
         }
